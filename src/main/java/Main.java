@@ -1,9 +1,17 @@
+import javax.inject.Inject;
+
 public class Main {
-    private static Car car;
+    @Inject
+    public Car car;
 
     public static void main(String[] args) {
+        Main main = new Main();
+        main.testMethod();
+    }
+
+    public void testMethod() {
         CarComponent carComponent = DaggerCarComponent.create();
-        car = carComponent.getCar();
-        car.drive();
+        carComponent.inject(this);
+        this.car.drive();
     }
 }
