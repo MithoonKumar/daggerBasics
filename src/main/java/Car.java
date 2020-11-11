@@ -12,6 +12,7 @@ public class Car {
     }
 
     public void drive() {
+        this.engine.startEngine();
         System.out.println("Driving");
     }
 
