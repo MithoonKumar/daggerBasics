@@ -14,4 +14,9 @@ public class Car {
     public void drive() {
         System.out.println("Driving");
     }
+
+    @Inject
+    public void addRemoteToThisCar(Remote remote) {
+        remote.addRemote(this);
+    }
 }
