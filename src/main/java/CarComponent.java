@@ -1,6 +1,8 @@
 import dagger.BindsInstance;
 import dagger.Component;
 
+import javax.inject.Named;
+
 @Component(modules = {WheelsModule.class, PetrolEngineModule.class})
 public interface CarComponent {
     Car getCar();
@@ -11,7 +13,10 @@ public interface CarComponent {
     interface Builder {
 
         @BindsInstance
-        Builder horsePower(int horsePower);
+        Builder horsePower(@Named("horsePower") int horsePower);
+
+        @BindsInstance
+        Builder engineCapacity(@Named("engineCapacity") int engineCapacity);
 
         CarComponent build();
     }
