@@ -10,7 +10,7 @@ public class Main {
     }
 
     public void testMethod() {
-        CarComponent carComponent = DaggerCarComponent.builder().dieselEngineModule(new DieselEngineModule(100)).build();
+        CarComponent carComponent = DaggerCarComponent.builder().horsePower(1).build();
         carComponent.inject(this);
         this.car.drive();
     }
