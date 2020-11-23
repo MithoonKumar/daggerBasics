@@ -1,11 +1,13 @@
 package CyclicDependencyInjection;
 
+import dagger.Lazy;
+
 import javax.inject.Inject;
 
 public class ClassA {
 
     @Inject
-    public ClassB classB;
+    public Lazy<ClassB> classB;
 
     @Inject
     public ClassA() {
